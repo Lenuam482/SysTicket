@@ -1,0 +1,7 @@
+{
+  "name": "SysTicket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
