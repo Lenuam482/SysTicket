@@ -1,0 +1,33 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="medium">
+    <ion-title>Venta Ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border ion-text-center">
+    <ion-toolbar>
+      <ion-title size="large">Bienvenido!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card #card>
+    <ion-card-content>Tenemos nuevas opciones</ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-select label="Escoja el ticket" [(ngModel)]="eventoTipo">
+        <ion-select-option *ngFor="let level of eventoTipos | keyvalue" 
+        value="{{level.key}}">
+          {{level.value}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button (click)="precioEventos()">Compra Ticket</ion-button>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="medium">
+    <ion-title>App de Manu</ion-title>
+  </ion-toolbar>
+</ion-footer>

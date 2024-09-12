@@ -1,20 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="medium">
+    <ion-title>Venta Ticket</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header class="ion-no-border ion-text-center">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Bienvenido!</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item lines="none">
+      Bienvenido
+    </ion-item>
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Fec Nac" [(ngModel)]="birthday" readonly></ion-input>
+      <ion-button id="btn_calendar">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+      <ion-popover trigger="btn_calendar" triggerAction="click">
+        <ng-template>
+          <ion-datetime [(ngModel)]="birthday"></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="clean()">Limpiar</ion-button>
+  <ion-button (click)="validateForm()">Compra Ticket</ion-button>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="medium">
+    <ion-title>App Desarrollada por Manu</ion-title>
+  </ion-toolbar>
+</ion-footer>
